@@ -154,6 +154,9 @@ span,
   box-shadow: 0 0 25px #b74b4b;
   transform: scale(1.3) translateY(-5px);
 }
+span{
+  color: aqua;
+}
 
 /* Buttons */
 .btn {
@@ -604,4 +607,5 @@ footer {
     font-size: 18px;
   }
 }
+
 
