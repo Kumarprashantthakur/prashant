@@ -483,21 +483,25 @@ span{
     display: block;
   }
 
-  nav {
-    position: fixed;
-    top: 60px;
-    right: 0;
-    height: 100vh;
-    width: 60%;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: black;
-    padding: 2rem;
-    gap: 2rem;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-        z-index: 999;
-  }
+
+nav {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  height: 700px;
+  width: 50%;
+  display: flex; 
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.6); 
+  backdrop-filter: blur(7px); 
+  -webkit-backdrop-filter: blur(7px); 
+  padding: 2rem;
+  gap: 2rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
 
   nav.active {
     transform: translateX(0);
@@ -607,5 +611,6 @@ footer {
     font-size: 18px;
   }
 }
+
 
 
