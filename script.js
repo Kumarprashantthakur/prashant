@@ -28,6 +28,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+ const words = ["Web Developer", "Frontend Developer", "Backend Developer", "MERN Stack Developer", "Programmer"];
+  let i = 0;
+  const textSpan = document.getElementById("typed-text");
+
+  function showWord() {
+    textSpan.innerText = words[i];
+    i = (i + 1) % words.length;
+  }
+
+  showWord(); 
+  setInterval(showWord, 2000); 
+
 
 
 
