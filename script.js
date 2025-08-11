@@ -1,20 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector(".contact-form");
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault(); 
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
 
-      const formData = {
-        name: form.name.value.trim(),
-        email: form.email.value.trim(),
-        message: form.message.value.trim()
-      };
-      console.log(" Contact Form Submitted:");
-      console.log(formData);
-      alert("Message sent! Successfully.");
-      form.reset();
+        const formData = {
+            name: form.name.value.trim(),
+            email: form.email.value.trim(),
+            message: form.message.value.trim()
+        };
+
+        try {
+            const res = await fetch("http://localhost:3000/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await res.json();
+            if (data.success) {
+                alert("✅ Message send for Prashant Thakur!");
+                form.reset();
+            } else {
+                alert("❌ Failed to send message: " + data.message);
+            }
+        } catch (err) {
+            console.error("Error:", err);
+            alert("❌ Error connecting to server");
+        }
     });
-  });
+});
+
   
   const menuToggle = document.getElementById('menu-toggle');
   const navMenu = document.getElementById('nav-menu');
@@ -28,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
- const words = ["Web Developer", "Frontend Developer", "Backend Developer", "MERN Stack Developer", "Programmer"];
+  const words = ["Web Developer", "Frontend Developer", "Backend Developer", "MERN Stack Developer", "Programmer"];
   let i = 0;
   const textSpan = document.getElementById("typed-text");
 
@@ -40,13 +56,4 @@ document.addEventListener("DOMContentLoaded", function () {
   showWord(); 
   setInterval(showWord, 2000); 
 
-
-
-
-
-
-
-
-
-
-
+  
