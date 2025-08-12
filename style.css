@@ -473,6 +473,42 @@ span{
   color: white;
 }
 
+
+.custom-alert {
+  display: none; 
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #4caf50; 
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.custom-alert.error {
+  background: #f44336; 
+}
+
+.custom-alert button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   html {
@@ -611,6 +647,7 @@ footer {
     font-size: 18px;
   }
 }
+
 
 
 
