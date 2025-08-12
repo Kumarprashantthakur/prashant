@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         try {
-            const res = await fetch("http://localhost:3000/contact", {
+            const res = await fetch("https://portbackend-fe4u.onrender.com", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)
@@ -57,3 +57,4 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(showWord, 2000); 
 
   
+
